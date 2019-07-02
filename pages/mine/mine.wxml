@@ -1,0 +1,21 @@
+<view class='user-message'>
+  <view class='user-message-alpha'>
+    <view class="user-message-photo">
+      <open-data type='userAvatarUrl'></open-data>
+    </view>
+    <open-data class="user-message-text" type='userNickName'></open-data>
+  </view>
+</view>
+
+<view class='mine-meun-list'>
+  <block wx:for="{{menuList}}" wx:key="menu">
+    <view data-id="{{index}}" wx:if="{{item.type == 0}}" class='mine-meun-item' bindtap='goNextPage'>
+      <image class='mine-meun-icon' src="{{item.icon}}"></image>
+      <view class='mine-meun-text'>{{item.text}}</view>
+    </view>
+    <button wx:elif="{{item.type == 1}}" open-type='share' plain='true' class='mine-meun-item mine-share-btn' data-id="{{index}}">
+      <image class='mine-meun-icon' src="../../image/wechatHL.png"></image>
+      <view class='mine-meun-text'>推荐给好友</view>
+    </button>
+  </block>
+</view>

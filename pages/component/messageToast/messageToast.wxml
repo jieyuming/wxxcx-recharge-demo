@@ -1,0 +1,13 @@
+<view wx:if="{{show}}" class='mask' bindtap='hideToast'></view>
+<view wx:if="{{show}}" class='toast-content'>
+  <view class='toast-content-title'>
+    <view>{{message.txt}}</view>
+    <image class='toast-content-icon' src='../../../image/trash.png' bindtap='hideToast'></image>
+  </view>
+  <view class='toast-content-info'>{{message.answer}}</view>
+  <view class='toast-content-footer'>
+    <view class='toast-content-text'>是否对你有帮助:</view>
+    <view class="toast-content-btn {{current == 1 ? 'active': ''}}" data-id="1" bindtap='postLog'>有用</view>
+    <view class="toast-content-btn {{current == 0 ? 'active': ''}}" data-id="0" bindtap='postLog'>无用</view>
+  </view>
+</view>

@@ -1,0 +1,36 @@
+<view class='tab-list'>
+  <view class="tab-list-item {{current == index ? 'tab-active' : ''}}" wx:for="{{tab}}" wx:key="tab" data-id='{{index}}' bindtap='chooseTab'>
+    <view class="tab-list-text">{{tab[index]}}</view>
+  </view>
+  <!-- 线条的宽度是56 取一半 -->
+  <view class="tab-line" style="transform:translateX({{(1/tab.length) * width * (current + 0.5) -28}}px)"></view>
+</view>
+
+<view class='user-info'>
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{busniessList}}">
+    <image class='user-info-icon' src='../../image/play.png'></image>
+  </picker>
+  <view class='user-info-beta'>
+    <input class='user-info-input' type='number' class='ser-info-phone' focus='{{isFocu}}' placeholder-class="user-info-placeholder" placeholder='请输入手机号码' maxlength='11' bindinput='getInputInfo' bindfocus='getToastFocus' bindblur="getToastBlur" value="{{value}}"></input>
+    <view wx:if="{{region}}" class='user-region-text'>{{region}}</view>
+  </view>
+  <image bindtap='clearValue' wx:if="{{value.length > 0}}" class='user-info-clear' src='../../image/trash.png' ></image>
+</view>
+<view wx:if="{{show && useHistory.length > 0}}" class='user-history' style="top:{{top}}px">
+  <block wx:for="{{useHistory}}" wx:key="userhistory">
+    <view class='user-history-item'>
+      <view class='user-history-alpha'>{{item.phone}}({{item.text}})</view>
+      <view class='user-history-beta' data-id="{{index}}" bindtap='deletaRecode'>移除</view>
+    </view>
+  </block>
+</view>
+
+<view wx:if="{{current == 1}}" class='goods-tip'>流量月包<text>到账生效，当月有效</text></view>
+
+<view class='goods-list'>
+  <view wx:for="{{goodList}}" wx:key="goods" class='goods-list-item' data-goodsid="{{item.goodid}}" id="{{index}}" bindtap='chooseGoods'>
+    <image class='goods-item-icon' src="{{item.icon ? item.icon :''}}"></image>
+    <view>{{item.title}}</view>
+    <view class='goods-item-text'>售价:{{item.price}}元</view>
+  </view>
+</view>

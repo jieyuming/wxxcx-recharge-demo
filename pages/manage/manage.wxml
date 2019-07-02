@@ -1,0 +1,21 @@
+<view class='manage-header'>
+  <view class='manage-header-photo'>
+    <open-data type='userAvatarUrl'></open-data>
+  </view>
+</view>
+
+<block wx:for="{{useHistory}}" wx:key='history'>
+  <view class='history-item'>
+    <view class='history-item-alpha'>
+      <view class='history-item-title'>{{item.phone}}</view>
+      <view class='history-item-text'>{{item.text}}</view>
+    </view>
+    <view data-id="{{index}}" class='history-item-beta' bindtap='deletaRecode'>移除</view>
+  </view>
+</block>
+
+<view class='manage-footer' bindtap='showCreateToast'>添加一个新号码</view>
+
+<!-- 引入新建号码组件 -->
+<newPhone id="newPhone" bind:confirmEvent="getNumberPhone" />
+

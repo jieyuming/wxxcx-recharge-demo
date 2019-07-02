@@ -1,0 +1,52 @@
+<view class='record-header'>
+  <view class='record-header-content'>
+    <block wx:for="{{tabs}}" wx:key='record'>
+      <view data-id="{{index}}" class="record-header-text {{index == current ? 'tab-active':''}}" bindtap='chooseTab'>{{tabs[index]}}</view>
+    </block>
+  </view>
+</view>
+
+<view class='order-title'>订单详情</view>
+<view class='order-list' wx:if="{{orderList.length > 0}}">
+  <block wx:for="{{orderList}}" wx:key="orderlist">
+    <view class='order-list-item'>
+      <view class='order-item-alpha'>
+        <view class='order-item-number'>
+          <view>商户订单:
+            <text>{{item.number}}</text>
+          </view>
+          <image data-number='{{item.number}}' bindtap='copyOrderNumber' class='order-item-icon' src='../../image/stop.png'></image>
+        </view>
+        <view class='order-item-time'>{{item.time}}</view>
+      </view>
+      <view class='order-item-beta'>
+        <view class='order-item-info'>
+          <view class='order-item-text'>手机号码</view>
+          <view class='order-item-text'>面额</view>
+          <view class='order-item-text'>状态</view>
+          <view class='order-item-text'>操作</view>
+        </view>
+        <view class='order-item-info'>
+          <view class='order-item-text'>{{item.phone}}</view>
+          <view class='order-item-text'>{{item.count}}</view>
+          <view class='order-item-text'>{{item.status}}</view>
+          <view class='order-item-text'>
+            <view class='order-result-btn' bindtap='goConcat'>投诉</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+<view wx:else class='order-none'>
+  <image class='order-news-icon' src="../../image/stop.png"></image>
+  <view>没有查询到充值记录</view>
+</view>
+<view class='record-footer'>
+  <block wx:for="{{footerList}}" wx:key="footer">
+    <view class='record-footer-item' data-id="{{index}}" bindtap='dealPage'>
+      <image src='{{item.icon}}'></image>
+      <view>{{item.txt}}</view>
+    </view>
+  </block>
+</view>

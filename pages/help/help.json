@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "客服帮助",
+    "usingComponents": {
+      "messageToast": "../component/messageToast/messageToast"
+    }
+}

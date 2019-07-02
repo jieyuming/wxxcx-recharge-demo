@@ -1,0 +1,41 @@
+<messageToast id='messageToast' message="{{message}}"/>
+<view class='help-header'>
+  <view class="help-header-title">Hi</view>
+  <open-data class="help-header-title" type='userNickName'></open-data>
+  <view class='help-header-txt'>已为你定制以下内容</view>
+</view>
+
+<view class='help-content'>
+  <view class='help-content-title'>猜你想问</view>
+  <block wx:for="{{requestList}}" wx:key="request">
+    <view bindtap='selectRequest' class='help-content-text' data-id="{{index}}">{{item.txt}}</view>
+  </block>
+  <view class='help-content-txt'>求助客服可以获得快速解答</view>
+</view>
+
+
+<view class='record-footer'>
+  <block wx:for="{{footerList}}" wx:key="footer">
+    <button class='record-footer-item login-button' wx:if="{{index == 0 && !isAuthUserInfo}}" data-id="{{index}}" plain='true' open-type="getUserInfo" bindgetuserinfo='getUserInfo'>
+      <view class='record-footer-alpha'>
+        <image src='{{item.icon}}'></image>
+        <view>{{item.txt}}</view>
+      </view>
+      <view class='record-footer-beta'>服务时间:{{item.time}}</view>
+    </button>
+    <button class='record-footer-item login-button' wx:if="{{index == 0 && isAuthUserInfo}}" data-id="{{index}}" plain='true' open-type="contact">
+      <view class='record-footer-alpha'>
+        <image src='{{item.icon}}'></image>
+        <view>{{item.txt}}</view>
+      </view>
+      <view class='record-footer-beta'>服务时间:{{item.time}}</view>
+    </button>
+    <view wx:elif="{{index != 0}}" class='record-footer-item' data-id="{{index}}" bindtap='dealPage'>
+      <view class='record-footer-alpha'>
+        <image src='{{item.icon}}'></image>
+        <view>{{item.txt}}</view>
+      </view>
+      <view class='record-footer-beta'>服务时间:{{item.time}}</view>
+    </view>
+  </block>
+</view>

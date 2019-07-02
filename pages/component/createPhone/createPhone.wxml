@@ -1,0 +1,10 @@
+<!--pages/component/createPhone.wxml-->
+<view wx:if="{{show}}" class='mask'></view>
+<view wx:if="{{show}}" class="toast-content {{ isFocu ? 'active' : ''}}">
+  <view class='toast-content-title'>添加新号码</view>
+  <input focus="{{isFocu}}" class="info" type='number' placeholder='请输入手机号码' bindfocus='getToastFocus' bindblur="getToastBlur" placeholder-class='placeholder' bindinput='getPhoneValue' value="{{value}}"></input>
+  <view class='toast-content-btn'>
+    <view class='toast-content-text' catchtap='cancel'>取消</view>
+    <view class='toast-content-text' catchtap='confirm'>确定</view>
+  </view>
+</view>

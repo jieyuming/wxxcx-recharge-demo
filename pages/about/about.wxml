@@ -1,0 +1,7 @@
+<!--pages/about/about.wxml-->
+<view class='about-content'>
+  <image class='about-content-photo' src='../../image/icon64_appwx_logo.png'></image>
+  <view class='about-content-text'>测试一下</view>
+  <view class='about-content-text'>测试一下</view>
+  <view class='about-content-text'>测试一下</view>
+</view>

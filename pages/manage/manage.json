@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "常用号码",
+  "usingComponents": {
+    "newPhone":"../component/createPhone/createPhone"
+  }
+}

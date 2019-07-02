@@ -1,0 +1,48 @@
+.user-message {
+    display: flex;
+    align-items: center;
+    background: #29b228;
+    height: 200rpx;
+    color: #fff;
+}
+
+.user-message-alpha {
+    display: flex;
+    align-items: center;
+    padding: 0 30rpx;
+}
+
+.user-message-photo {
+    width: 100rpx;
+    height: 100rpx;
+    background: #ccc;
+    border-radius:50%;
+    overflow: hidden; 
+}
+.user-message-text{
+    margin-left:30rpx; 
+}
+.mine-meun-list{
+    display: flex;
+    flex-direction: column;
+    padding: 20rpx 30rpx;
+}
+.mine-meun-item{
+    display: flex;
+    align-items: center;
+    padding: 25rpx 0;
+}
+.mine-share-btn[plain]{
+    border: none;
+    margin: 0;   
+    padding-left:0;
+    padding-right:0;
+    color: #1a1a1a;
+}
+.mine-meun-icon{
+    width: 80rpx;
+    height: 80rpx;
+}
+.mine-meun-text{
+    padding-left: 30rpx;
+}

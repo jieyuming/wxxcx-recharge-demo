@@ -1,0 +1,124 @@
+.tab-list{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom:1rpx solid #f5f5f5;
+    padding: 30rpx 0;
+}
+.tab-list-item{
+    display: flex;
+    flex-direction:column; 
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    font-size: 40rpx; 
+}
+
+.tab-active{
+    color: #29b228;
+}
+.tab-line{
+    position: absolute;
+    top: 86rpx;
+    left: 0;
+    width: 56px;
+    height: 6rpx;
+    background: #29b228;
+    transition: transform 0.5s ease 0s;
+}
+.goods-list{
+    padding: 20rpx 0;
+    display: flex;
+    /* 换行 */
+    flex-wrap: wrap;
+}
+.goods-list-item{
+    position: relative;
+    width: calc(32% - 10rpx);
+    margin:0 0 24rpx 10rpx; 
+    padding: 22rpx 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #29b228;
+    border-radius: 10rpx; 
+    color: #29b228;
+}
+.goods-item-icon{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60rpx;
+    height: 25rpx;
+}
+.goods-item-text{
+    font-size: 24rpx;
+}
+.goods-tip{
+  padding: 10rpx;
+}
+.goods-tip text{
+  font-size: 24rpx;
+  color: #ccc;
+  padding: 0 0 0 10rpx;
+}
+.user-info{
+    display: flex;
+    align-items: center;
+    height: 200rpx;
+    background: #f5f5f5;
+    margin: 20rpx 20rpx 0;
+    border-radius:10rpx; 
+}
+.user-info-clear{
+  width: 60rpx;
+  height: 60rpx;
+  padding: 20rpx;
+}
+.user-info-beta{
+  flex: 1;
+  display: flex;
+  flex-direction:column; 
+  justify-content: center;
+}
+.user-info-icon{
+    width: 60rpx;
+    height: 60rpx;
+    margin: 0 40rpx; 
+}
+.user-info-placeholder{
+    font-size: 40rpx;
+}
+.user-info-input{
+    flex: 1;
+    height: 70rpx;
+}
+
+.user-history{
+  position: fixed;
+  top: 200px;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #f5f5f5;
+  z-index: 1;
+}
+.user-history-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:10rpx 30rpx;
+}
+.user-history-beta{
+  padding: 10rpx 20rpx;
+  background: #ccc;
+  color: #1a1a1a;
+  border-radius: 6rpx; 
+  font-size: 26rpx;
+}
+.user-region-text{
+  color: #ccc;
+  font-size: 32rpx;
+  padding-top: 6rpx; 
+}
